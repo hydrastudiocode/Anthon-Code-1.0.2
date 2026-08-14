@@ -1,4 +1,4 @@
-# Anthon-Code 1.0.1 - Biblioteca de Codigo
+# Anthon-Code 1.0.2 - Biblioteca de Codigo
 
 ![Version](https://img.shields.io/badge/version-1.0.1-blue)
 ![Licencia](https://img.shields.io/badge/licencia-MIT-green)
