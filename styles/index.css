@@ -1,0 +1,461 @@
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Google Sans', 'Segoe UI', Roboto, sans-serif;
+            min-height: 100vh;
+            background: radial-gradient(circle, lab(9.49083% -.351779 -2.95578) 0%, lab(3.68927% -.135548 -1.17013) 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Efecto de partículas animadas */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            background: linear-gradient(135deg, #fe9002, #fec500);
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+                opacity: 0.05;
+            }
+            50% {
+                transform: translateY(-50px) translateX(30px);
+                opacity: 0.15;
+            }
+        }
+
+        /* Contenedor principal */
+        .login-container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 480px;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        /* Tarjeta de login estilo Firebase */
+        .login-card {
+            background: radial-gradient(circle, lab(9.49083% -.351779 -2.95578) 0%, lab(3.68927% -.135548 -1.17013) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 48px 40px;
+            box-shadow: 0 25px 50px -12px rgb(70 59 43 / 50%);
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+      
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Logo */
+        .logo-wrapper {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 0 rgba(254, 144, 2, 0));
+            }
+            50% {
+                transform: scale(1.05);
+                filter: drop-shadow(0 0 20px rgba(254, 144, 2, 0.5));
+            }
+        }
+
+        .logo-text {
+            font-size: 28px;
+            font-weight: 700;
+            margin-top: 16px;
+            background: #fe9002;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-subtitle {
+            color: #9aa0a6;
+            font-size: 14px;
+            margin-top: 8px;
+            font-weight: 400;
+        }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 32px;
+            background: rgba(20, 20, 20, 0.8);
+            border-radius: 12px;
+            padding: 4px;
+        }
+
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 12px 20px;
+            background: transparent;
+            border: none;
+            color: #9aa0a6;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            font-family: 'Google Sans', sans-serif;
+        }
+
+        .tab.active {
+            background: linear-gradient(135deg, #fe9002, #fec500);
+            color: #000;
+            box-shadow: 0 2px 8px rgba(254, 144, 2, 0.3);
+        }
+
+        .tab:hover:not(.active) {
+            background: rgba(254, 144, 2, 0.1);
+            color: #fe9002;
+        }
+
+        /* Formularios */
+        .form-panel {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .form-panel.active-panel {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateX(10px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .input-group {
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #fe9002;
+            font-size: 18px;
+            z-index: 1;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 14px 16px 14px 48px;
+            background: rgba(20, 20, 20, 0);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: #fff;
+            font-size: 16px;
+            transition: all 0.2s ease;
+            font-family: 'Google Sans', sans-serif;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #fe9002;
+            background: rgba(30, 30, 30, 0.95);
+            box-shadow: 0 0 0 3px rgba(254, 144, 2, 0.1);
+        }
+
+        .input-group input::placeholder {
+            color: #5f6368;
+        }
+
+        /* Botones */
+        .btn-primary {
+            width: 100%;
+            padding: 14px;
+            background: #fe9002;
+            border: none;
+            border-radius: 12px;
+            color: #000;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: 'Google Sans', sans-serif;
+            margin-top: 8px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(254, 144, 2, 0.3);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Separador */
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 32px 0 24px;
+            color: #5f6368;
+            font-size: 12px;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .divider span {
+            margin: 0 16px;
+        }
+
+        /* Botones de redes sociales */
+        .social-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .social-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(20, 20, 20, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            color: #9aa0a6;
+            font-size: 22px;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-3px);
+            border-color: #fe9002;
+        }
+
+        .social-btn.github:hover { background: #333; color: #fff; }
+        .social-btn.facebook:hover { background: #1877f2; color: #fff; border-color: #1877f2; }
+        .social-btn.instagram:hover { background: radial-gradient(circle at 30% 110%, #ffdb7e, #f9ce34, #e4405f, #833ab4, #5851db); color: #fff; }
+        .social-btn.whatsapp:hover { background: #25d366; color: #fff; border-color: #25d366; }
+
+        /* Enlace de recuperación */
+        .forgot-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .forgot-link a {
+            color: #fe9002;
+            display: none;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .forgot-link a:hover {
+            color: #fec500;
+            text-decoration: underline;
+        }
+
+        /* Toast Notification - Popup lateral */
+        .toast-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            min-width: 280px;
+            max-width: 350px;
+            background: #1e1e1e;
+            border-radius: 12px;
+            padding: 0;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+            z-index: 10000;
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+            border-left: 4px solid;
+            overflow: hidden;
+        }
+
+        .toast-notification.show {
+            transform: translateX(0);
+        }
+
+        .toast-content {
+            display: flex;
+            align-items: center;
+            padding: 14px 16px;
+            gap: 12px;
+        }
+
+        .toast-icon {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .toast-icon i {
+            font-size: 14px;
+        }
+
+        .toast-message {
+            flex: 1;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.4;
+            color: white;
+        }
+
+        .toast-close {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: background 0.2s;
+            color: #9aa0a6;
+        }
+
+        .toast-close:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        /* Colores de toast */
+        .toast-notification.success {
+            border-left-color: #4caf50;
+        }
+        .toast-notification.success .toast-icon {
+            background: rgba(76, 175, 80, 0.15);
+            color: #4caf50;
+        }
+
+        .toast-notification.error {
+            border-left-color: #dc2d00;
+        }
+        .toast-notification.error .toast-icon {
+            background: rgba(220, 45, 0, 0.15);
+            color: #dc2d00;
+        }
+
+        .toast-notification.info {
+            border-left-color: #fec500;
+        }
+        .toast-notification.info .toast-icon {
+            background: rgba(254, 197, 0, 0.15);
+            color: #fec500;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 24px;
+            color: #5f6368;
+            font-size: 12px;
+        }
+
+        .footer a {
+            color: #fe9002;
+            text-decoration: none;
+        }
+
+        /* Loader */
+        .loader {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            border-top-color: #000;
+            animation: spin 0.6s linear infinite;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Responsive */
+        @media (max-width: 520px) {
+            .login-card {
+                padding: 32px 24px;
+            }
+            
+            .logo {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .logo-text {
+                font-size: 24px;
+            }
+
+            .toast-notification {
+                left: 20px;
+                right: 20px;
+                max-width: none;
+            }
+        }
