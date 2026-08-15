@@ -1,4 +1,5 @@
 # Anthon-Code 1.0.2 - Biblioteca de Codigo
+![Portada Z8N](cap1.png)
 
 ![Version](https://img.shields.io/badge/version-1.0.1-blue)
 ![Licencia](https://img.shields.io/badge/licencia-MIT-green)
@@ -7,7 +8,7 @@
 
 **Sistema completo de biblioteca de codigo** con gestion de scripts, categorización por lenguajes, resaltado de sintaxis y sistema de autenticación.
 
----
+![Portada Z8N](cap3.png)
 
 ## 🚀 Caracteristicas
 
@@ -159,5 +160,9 @@ Debido a los módulos ES6, necesitas un servidor local: Live Server, Python, Nod
 
 ### Abre http://localhost:8000
 Luego de todas las verificaciones desplega en Netlify, Vercel o GitHub.
+
+### Personalizacion
+Edita los colores, fuentes, textos, y personaliza a tu gusto!
+![Portada Z8N](cap2.png)
 
 Muchas Gracias! sigan  [Hydra Studio Code](https://github.com/hydrastudiocode)
