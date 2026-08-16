@@ -1,0 +1,468 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Google Sans', 'Segoe UI', Roboto, sans-serif;
+    min-height: 100vh;
+    background: radial-gradient(circle, #1a1a2e 0%, #0a0a0f 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Efecto de partículas animadas */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.particle {
+    position: absolute;
+    background: linear-gradient(135deg, #a855f7, #ec4899);
+    border-radius: 50%;
+    opacity: 0.1;
+    animation: float 20s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.05;
+    }
+    50% {
+        transform: translateY(-50px) translateX(30px);
+        opacity: 0.15;
+    }
+}
+
+/* Contenedor principal */
+.login-container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 480px;
+    padding: 20px;
+    margin: 20px;
+}
+
+/* Tarjeta de login estilo Windows 7 oscuro */
+.login-card {
+    background: linear-gradient(to bottom, rgba(26, 26, 36, 0.9) 0%, rgba(10, 10, 15, 0.95) 100%);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    padding: 48px 40px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    border: 1px solid #2a2a3a;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Logo */
+.logo-wrapper {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 0 rgba(168, 85, 247, 0));
+    }
+    50% {
+        transform: scale(1.05);
+        filter: drop-shadow(0 0 20px rgba(168, 85, 247, 0.5));
+    }
+}
+
+.logo-text {
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 16px;
+    background: linear-gradient(to bottom, #c084fc 0%, #a855f7 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: -0.5px;
+    text-shadow: 0 1px 2px rgba(168, 85, 247, 0.3);
+}
+
+.logo-subtitle {
+    color: #b8a8cc;
+    font-size: 14px;
+    margin-top: 8px;
+    font-weight: 400;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 32px;
+    background: rgba(20, 20, 28, 0.8);
+    border-radius: 6px;
+    padding: 4px;
+    border: 1px solid #2a2a3a;
+}
+
+.tab {
+    flex: 1;
+    text-align: center;
+    padding: 12px 20px;
+    background: transparent;
+    border: none;
+    color: #b8a8cc;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    font-family: 'Google Sans', sans-serif;
+}
+
+.tab.active {
+    background: linear-gradient(to bottom, #a855f7 0%, #7c3aed 100%);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(168, 85, 247, 0.3);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.tab:hover:not(.active) {
+    background: rgba(168, 85, 247, 0.1);
+    color: #c084fc;
+}
+
+/* Formularios */
+.form-panel {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.form-panel.active-panel {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.input-group {
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.input-group i {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a855f7;
+    font-size: 18px;
+    z-index: 1;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 16px 14px 48px;
+    background: rgba(20, 20, 28, 0.5);
+    border: 1px solid #2a2a3a;
+    border-radius: 4px;
+    color: #f0e6ff;
+    font-size: 16px;
+    transition: all 0.2s ease;
+    font-family: 'Google Sans', sans-serif;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #a855f7;
+    background: rgba(26, 26, 36, 0.9);
+    box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.2), inset 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.input-group input::placeholder {
+    color: #6b5b7d;
+}
+
+/* Botones */
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(to bottom, #a855f7 0%, #7c3aed 100%);
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: 'Google Sans', sans-serif;
+    margin-top: 8px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(168, 85, 247, 0.3);
+    background: linear-gradient(to bottom, #c084fc 0%, #a855f7 100%);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Separador */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 32px 0 24px;
+    color: #6b5b7d;
+    font-size: 12px;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #2a2a3a;
+}
+
+.divider span {
+    margin: 0 16px;
+}
+
+/* Botones de redes sociales */
+.social-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.social-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 4px;
+    background: rgba(20, 20, 28, 0.8);
+    border: 1px solid #2a2a3a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    color: #b8a8cc;
+    font-size: 22px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    border-color: #a855f7;
+}
+
+.social-btn.github:hover { background: #333; color: #fff; }
+.social-btn.facebook:hover { background: #1877f2; color: #fff; border-color: #1877f2; }
+.social-btn.instagram:hover { background: radial-gradient(circle at 30% 110%, #ffdb7e, #f9ce34, #e4405f, #833ab4, #5851db); color: #fff; }
+.social-btn.whatsapp:hover { background: #25d366; color: #fff; border-color: #25d366; }
+
+/* Enlace de recuperación */
+.forgot-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.forgot-link a {
+    color: #c084fc;
+    display: none;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.forgot-link a:hover {
+    color: #a855f7;
+    text-decoration: underline;
+}
+
+/* Toast Notification - Popup lateral */
+.toast-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    min-width: 280px;
+    max-width: 350px;
+    background: #1a1a24;
+    border-radius: 6px;
+    padding: 0;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+    transform: translateX(400px);
+    transition: transform 0.3s ease;
+    border-left: 4px solid;
+    overflow: hidden;
+    border: 1px solid #2a2a3a;
+}
+
+.toast-notification.show {
+    transform: translateX(0);
+}
+
+.toast-content {
+    display: flex;
+    align-items: center;
+    padding: 14px 16px;
+    gap: 12px;
+}
+
+.toast-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.toast-icon i {
+    font-size: 14px;
+}
+
+.toast-message {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #f0e6ff;
+}
+
+.toast-close {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.2s;
+    color: #b8a8cc;
+}
+
+.toast-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #f0e6ff;
+}
+
+/* Colores de toast */
+.toast-notification.success {
+    border-left-color: #4caf50;
+}
+.toast-notification.success .toast-icon {
+    background: rgba(76, 175, 80, 0.15);
+    color: #4caf50;
+}
+
+.toast-notification.error {
+    border-left-color: #ec4899;
+}
+.toast-notification.error .toast-icon {
+    background: rgba(236, 72, 153, 0.15);
+    color: #ec4899;
+}
+
+.toast-notification.info {
+    border-left-color: #a855f7;
+}
+.toast-notification.info .toast-icon {
+    background: rgba(168, 85, 247, 0.15);
+    color: #c084fc;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 24px;
+    color: #6b5b7d;
+    font-size: 12px;
+}
+
+.footer a {
+    color: #c084fc;
+    text-decoration: none;
+}
+
+/* Loader */
+.loader {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 0.6s linear infinite;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 520px) {
+    .login-card {
+        padding: 32px 24px;
+    }
+    
+    .logo {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .logo-text {
+        font-size: 24px;
+    }
+
+    .toast-notification {
+        left: 20px;
+        right: 20px;
+        max-width: none;
+    }
+}
