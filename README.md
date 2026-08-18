@@ -161,8 +161,13 @@ Debido a los módulos ES6, necesitas un servidor local: Live Server, Python, Nod
 ### Abre http://localhost:8000
 Luego de todas las verificaciones desplega en Netlify, Vercel o GitHub.
 
-### Personalizacion
+### Personalizacion / Temas
 Edita los colores, fuentes, textos, y personaliza a tu gusto!
-![Portada Z8N](Capturas/cap2.png)
+
+### Tema Rojo
+![Portada Z8N](Capturas/temarojo.png)
+
+### Tema Oxigeno Oscuro
+![Portada Z8N](Capturas/temamorado.png)
 
 Muchas Gracias! sigan  [Hydra Studio Code](https://github.com/hydrastudiocode)
