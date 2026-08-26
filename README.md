@@ -173,4 +173,3 @@ Edita los colores, fuentes, textos, y personaliza a tu gusto!
 ### Tema Claro
 ![Portada Z8N](Capturas/tema-claro.png)
 
-Muchas Gracias! sigan  [Hydra Studio Code](https://github.com/hydrastudiocode)
