@@ -170,4 +170,7 @@ Edita los colores, fuentes, textos, y personaliza a tu gusto!
 ### Tema Oxigeno Oscuro
 ![Portada Z8N](Capturas/temamorado.png)
 
+### Tema Claro
+![Portada Z8N](Capturas/tema-claro.png)
+
 Muchas Gracias! sigan  [Hydra Studio Code](https://github.com/hydrastudiocode)
