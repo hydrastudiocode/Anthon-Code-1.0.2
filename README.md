@@ -164,8 +164,8 @@ Luego de todas las verificaciones desplega en Netlify, Vercel o GitHub.
 ### Personalizacion / Temas
 Edita los colores, fuentes, textos, y personaliza a tu gusto!
 
-### Tema Rojo
-![Portada Z8N](Capturas/temarojo.png)
+### Tema Gris Oscuro
+![Portada Z8N](Capturas/Gris-Oscuro.png)
 
 ### Tema Oxigeno Oscuro
 ![Portada Z8N](Capturas/temamorado.png)
