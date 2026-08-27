@@ -609,7 +609,6 @@ main {
 }
 
 .modal-content {
-    background: rgba(255, 255, 255, 0.5);
     margin: 2% auto;
     padding: 1.6rem;
     border-radius: 14px;
@@ -619,7 +618,6 @@ main {
     position: relative;
     box-shadow: var(--shadow-lg);
     border: var(--glass-border);
-    backdrop-filter: blur(var(--glass-blur)) saturate(140%);
     -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(140%);
 }
 
@@ -941,20 +939,16 @@ textarea {
 
 #edit-script-modal .modal-content,
 #add-script-modal .modal-content {
-    background: rgba(255, 255, 255, 0.5);
     margin: 2% auto;
     padding: 24px;
     border-radius: 20px;
     width: 100%;
-    max-width: 1100px;
-    height: 90vh;
-    max-height: 90vh;
+    height: 99vh;
     overflow-y: auto;
     position: relative;
     border: var(--glass-border);
     display: flex;
     flex-direction: column;
-    backdrop-filter: blur(var(--glass-blur)) saturate(140%);
     -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(140%);
 }
 
@@ -1006,17 +1000,13 @@ textarea {
     right: 20px !important;
     bottom: 20px !important;
     z-index: 9999 !important;
-    background: rgba(255, 255, 255, 0.55) !important;
-    padding: 20px !important;
     border-radius: 12px !important;
     box-shadow: var(--shadow-lg) !important;
     backdrop-filter: blur(var(--glass-blur-strong));
     -webkit-backdrop-filter: blur(var(--glass-blur-strong));
 }
 
-.code-mirror-wrapper.expanded .CodeMirror {
-    height: calc(100% - 50px) !important;
-}
+
 
 .expand-exit-btn {
     position: absolute !important;
