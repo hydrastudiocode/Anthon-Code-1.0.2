@@ -173,3 +173,6 @@ Edita los colores, fuentes, textos, y personaliza a tu gusto!
 ### Tema Claro
 ![Portada Z8N](Capturas/tema-claro.png)
 
+### Tema Lego Batman
+![Portada Z8N](Capturas/lego-batman.png)
+
