@@ -164,6 +164,17 @@ Luego de todas las verificaciones desplega en Netlify, Vercel o GitHub.
 ### Personalizacion / Temas
 Edita los colores, fuentes, textos, y personaliza a tu gusto!
 
+### Tema XP
+![Portada Z8N](Capturas/xp.png)
+
+
+### Tema XP-Dark
+![Portada Z8N](Capturas/xp-dark.png)
+
+
+### Tema Tetris
+![Portada Z8N](Capturas/tetris.png)
+
 ### Tema Gris Oscuro
 ![Portada Z8N](Capturas/Gris-Oscuro.png)
 
